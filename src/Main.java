@@ -26,7 +26,15 @@ public class Main
             }
             else if(tokens[0].equals("remove"))
             {
-                executor.removeCustomer(tokens[1]);
+                try
+                {
+                    executor.removeCustomer(tokens[1]);
+                }
+                catch (ArrayIndexOutOfBoundsException e)
+                {
+                    System.out.println("Вы не указали имя клиента. Пожалуйста, укажите фамилию и имя клиента");
+                }
+
             }
             else if(tokens[0].equals("count")) {
                 System.out.println("There are " + executor.getCount() + " customers");

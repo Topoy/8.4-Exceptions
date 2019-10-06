@@ -40,6 +40,11 @@ public class CustomerStorage
 
     public void removeCustomer(String name)
     {
+        if (name.isEmpty())
+        {
+            System.out.println("Вы не указали имя");
+            return;
+        }
         storage.remove(name);
     }
 
